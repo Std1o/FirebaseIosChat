@@ -3,15 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9840214326828020009F911E /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214226828020009F911E /* ListMessage.swift */; };
 		98A6437C268253E800F88A38 /* FirebaseIosChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */; };
 		98A6437E268253E800F88A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6437D268253E800F88A38 /* ContentView.swift */; };
 		98A64380268253E900F88A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A6437F268253E900F88A38 /* Assets.xcassets */; };
 		98A64383268253E900F88A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A64382268253E900F88A38 /* Preview Assets.xcassets */; };
 		98A6438C2682558E00F88A38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A6438B2682558E00F88A38 /* GoogleService-Info.plist */; };
+		98A6439C2682580B00F88A38 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6439B2682580B00F88A38 /* ImagePicker.swift */; };
+		98A6439F2682583C00F88A38 /* MessagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6439E2682583C00F88A38 /* MessagePage.swift */; };
+		98A643A52682587600F88A38 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A643A42682587600F88A38 /* DataFire.swift */; };
+		98A643A82682588400F88A38 /* IDData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A643A72682588400F88A38 /* IDData.swift */; };
 		D9355F0CB12AE3A0B9DECDDC /* Pods_FirebaseIosChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,6 +24,7 @@
 		1549714E5B6375E99DD4F2D0 /* Pods-FirebaseIosChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIosChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat.debug.xcconfig"; sourceTree = "<group>"; };
 		20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIosChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat.release.xcconfig"; sourceTree = "<group>"; };
 		2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseIosChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9840214226828020009F911E /* ListMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
 		98A64378268253E800F88A38 /* FirebaseIosChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseIosChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseIosChatApp.swift; sourceTree = "<group>"; };
 		98A6437D268253E800F88A38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,6 +32,10 @@
 		98A64382268253E900F88A38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98A64384268253E900F88A38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98A6438B2682558E00F88A38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		98A6439B2682580B00F88A38 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		98A6439E2682583C00F88A38 /* MessagePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePage.swift; sourceTree = "<group>"; };
+		98A643A42682587600F88A38 /* DataFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
+		98A643A72682588400F88A38 /* IDData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,11 @@
 		98A6437A268253E800F88A38 /* FirebaseIosChat */ = {
 			isa = PBXGroup;
 			children = (
+				9840214226828020009F911E /* ListMessage.swift */,
+				98A643A72682588400F88A38 /* IDData.swift */,
+				98A643A42682587600F88A38 /* DataFire.swift */,
+				98A6439E2682583C00F88A38 /* MessagePage.swift */,
+				98A6439B2682580B00F88A38 /* ImagePicker.swift */,
 				98A6438B2682558E00F88A38 /* GoogleService-Info.plist */,
 				98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */,
 				98A6437D268253E800F88A38 /* ContentView.swift */,
@@ -93,7 +108,6 @@
 				1549714E5B6375E99DD4F2D0 /* Pods-FirebaseIosChat.debug.xcconfig */,
 				20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -211,8 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A6439C2682580B00F88A38 /* ImagePicker.swift in Sources */,
 				98A6437E268253E800F88A38 /* ContentView.swift in Sources */,
+				98A6439F2682583C00F88A38 /* MessagePage.swift in Sources */,
+				98A643A52682587600F88A38 /* DataFire.swift in Sources */,
 				98A6437C268253E800F88A38 /* FirebaseIosChatApp.swift in Sources */,
+				98A643A82682588400F88A38 /* IDData.swift in Sources */,
+				9840214326828020009F911E /* ListMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,4 +8,5 @@ target 'FirebaseIosChat' do
   # Pods for FirebaseIosChat
 
 pod 'Firebase/Analytics'
+pod 'Firebase/Firestore'
 end
