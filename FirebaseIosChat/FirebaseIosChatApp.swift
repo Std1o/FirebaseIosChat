@@ -1,14 +1,13 @@
-//
-//  FirebaseIosChatApp.swift
-//  FirebaseIosChat
-//
-//  Created by Илья on 22.06.2021.
-//
+import Firebase
 
 import SwiftUI
 
 @main
 struct FirebaseIosChatApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()

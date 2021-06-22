@@ -11,15 +11,21 @@
 		98A6437E268253E800F88A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6437D268253E800F88A38 /* ContentView.swift */; };
 		98A64380268253E900F88A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A6437F268253E900F88A38 /* Assets.xcassets */; };
 		98A64383268253E900F88A38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A64382268253E900F88A38 /* Preview Assets.xcassets */; };
+		98A6438C2682558E00F88A38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A6438B2682558E00F88A38 /* GoogleService-Info.plist */; };
+		D9355F0CB12AE3A0B9DECDDC /* Pods_FirebaseIosChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1549714E5B6375E99DD4F2D0 /* Pods-FirebaseIosChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIosChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat.debug.xcconfig"; sourceTree = "<group>"; };
+		20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIosChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat.release.xcconfig"; sourceTree = "<group>"; };
+		2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseIosChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A64378268253E800F88A38 /* FirebaseIosChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseIosChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseIosChatApp.swift; sourceTree = "<group>"; };
 		98A6437D268253E800F88A38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98A6437F268253E900F88A38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A64382268253E900F88A38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98A64384268253E900F88A38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A6438B2682558E00F88A38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9355F0CB12AE3A0B9DECDDC /* Pods_FirebaseIosChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5964F0005BF3EF476C3EECAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98A6436F268253E700F88A38 = {
 			isa = PBXGroup;
 			children = (
 				98A6437A268253E800F88A38 /* FirebaseIosChat */,
 				98A64379268253E800F88A38 /* Products */,
+				E7BCCFBDACC7D52C28BBA23B /* Pods */,
+				5964F0005BF3EF476C3EECAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +69,7 @@
 		98A6437A268253E800F88A38 /* FirebaseIosChat */ = {
 			isa = PBXGroup;
 			children = (
+				98A6438B2682558E00F88A38 /* GoogleService-Info.plist */,
 				98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */,
 				98A6437D268253E800F88A38 /* ContentView.swift */,
 				98A6437F268253E900F88A38 /* Assets.xcassets */,
@@ -69,6 +87,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E7BCCFBDACC7D52C28BBA23B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1549714E5B6375E99DD4F2D0 /* Pods-FirebaseIosChat.debug.xcconfig */,
+				20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98A64387268253E900F88A38 /* Build configuration list for PBXNativeTarget "FirebaseIosChat" */;
 			buildPhases = (
+				308DCCD7DA65DCC1FD264D5B /* [CP] Check Pods Manifest.lock */,
 				98A64374268253E700F88A38 /* Sources */,
 				98A64375268253E700F88A38 /* Frameworks */,
 				98A64376268253E700F88A38 /* Resources */,
+				7C5A43F118844F14E7CE4F45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,10 +158,53 @@
 			files = (
 				98A64383268253E900F88A38 /* Preview Assets.xcassets in Resources */,
 				98A64380268253E900F88A38 /* Assets.xcassets in Resources */,
+				98A6438C2682558E00F88A38 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		308DCCD7DA65DCC1FD264D5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseIosChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C5A43F118844F14E7CE4F45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98A64374268253E700F88A38 /* Sources */ = {
@@ -264,6 +337,7 @@
 		};
 		98A64388268253E900F88A38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1549714E5B6375E99DD4F2D0 /* Pods-FirebaseIosChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +360,7 @@
 		};
 		98A64389268253E900F88A38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
