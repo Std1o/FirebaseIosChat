@@ -54,10 +54,16 @@ struct Messagepage: View {
                     
                 }
             }.padding()
-        }.overlay(
             
-            // Image Viewer....
-            FullImageView()
+        }.overlay(
+            ZStack{
+                FullImageView()
+                if selectedImage != nil{
+                    GeometryReader { geometry in
+                        ProgressDialog().frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                    }.background(Color.black.opacity(0.45).edgesIgnoringSafeArea(.all))
+                }
+            }
         )
         //setting envoronment Object...
         .environmentObject(homeData).onChange(of: selectedImage, perform: { value in
@@ -70,35 +76,36 @@ struct Messagepage: View {
     }
     
     func uploadImageToFireBase(image: UIImage) {
-            // Create the file metadata
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpeg"
-            
-            // Upload the file to the path FILE_NAME
-            storage.child(FILE_NAME).putData(image.jpegData(compressionQuality: 0.42)!, metadata: metadata) { (metadata, error) in
-                guard let metadata = metadata else {
-                    // Uh-oh, an error occurred!
-                    print((error?.localizedDescription)!)
-                    return
-                }
-                // Metadata contains file metadata such as size, content-type.
-                let size = metadata.size
-                
-                print("Upload size is \(size)")
-                print("Upload success")
-                self.downloadImageFromFirebase()
+        // Create the file metadata
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        // Upload the file to the path FILE_NAME
+        storage.child(FILE_NAME).putData(image.jpegData(compressionQuality: 0.42)!, metadata: metadata) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                print((error?.localizedDescription)!)
+                return
             }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            
+            print("Upload size is \(size)")
+            print("Upload success")
+            self.downloadImageFromFirebase()
         }
+    }
     
     func downloadImageFromFirebase() {
-            // Create a reference to the file you want to download
-            storage.child(FILE_NAME).downloadURL { [self] (url, error) in
-                if error != nil {
-                    // Handle any errors
-                    print((error?.localizedDescription)!)
-                    return
-                }
-                self.message.addInfo(msg: self.write, user: self.name, image: url!.absoluteString)
+        // Create a reference to the file you want to download
+        storage.child(FILE_NAME).downloadURL { [self] (url, error) in
+            if error != nil {
+                // Handle any errors
+                print((error?.localizedDescription)!)
+                return
             }
+            self.message.addInfo(msg: self.write, user: self.name, image: url!.absoluteString)
+            selectedImage = nil
         }
+    }
 }

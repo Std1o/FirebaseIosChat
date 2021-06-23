@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		980894E326838287000A8CA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980894E226838287000A8CA4 /* HomeViewModel.swift */; };
 		980894E6268382BD000A8CA4 /* FullImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980894E5268382BD000A8CA4 /* FullImageView.swift */; };
+		98318CBD268389A4008A1B00 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98318CBC268389A4008A1B00 /* ProgressDialog.swift */; };
 		9840214326828020009F911E /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214226828020009F911E /* ListMessage.swift */; };
 		9840214726833152009F911E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214526833152009F911E /* ImageLoader.swift */; };
 		9840214826833152009F911E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214626833152009F911E /* ImagePicker.swift */; };
@@ -30,6 +31,7 @@
 		2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseIosChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980894E226838287000A8CA4 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		980894E5268382BD000A8CA4 /* FullImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageView.swift; sourceTree = "<group>"; };
+		98318CBC268389A4008A1B00 /* ProgressDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDialog.swift; sourceTree = "<group>"; };
 		9840214226828020009F911E /* ListMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
 		9840214526833152009F911E /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9840214626833152009F911E /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		98A6437A268253E800F88A38 /* FirebaseIosChat */ = {
 			isa = PBXGroup;
 			children = (
+				98318CBC268389A4008A1B00 /* ProgressDialog.swift */,
 				980894E126838271000A8CA4 /* ImageViewer */,
 				9840214526833152009F911E /* ImageLoader.swift */,
 				9840214626833152009F911E /* ImagePicker.swift */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98318CBD268389A4008A1B00 /* ProgressDialog.swift in Sources */,
 				98A6439C2682580B00F88A38 /* ImagePicker.swift in Sources */,
 				98A6437E268253E800F88A38 /* ContentView.swift in Sources */,
 				98A6439F2682583C00F88A38 /* MessagePage.swift in Sources */,
