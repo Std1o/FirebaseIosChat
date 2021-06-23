@@ -87,9 +87,3 @@ struct FullImageView: View {
         }).onEnded(homeData.onEnd(value:)))
     }
 }
-
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

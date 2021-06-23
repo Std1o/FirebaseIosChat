@@ -10,4 +10,6 @@ target 'FirebaseIosChat' do
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 end

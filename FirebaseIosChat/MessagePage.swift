@@ -4,13 +4,13 @@ import FirebaseStorage
 
 struct Messagepage: View {
     @ObservedObject var message = DataFire()
-    var name = ""
     var image : String?
     @State var shown = false
     @State var selectedImage: UIImage?
     @State var attachedFiles = [String]()
     let storage = Storage.storage().reference()
     @StateObject var homeData = HomeViewModel()
+    @ObservedObject var info:  AppDelegate
     
     @State var write = ""
     var body: some View {
@@ -18,7 +18,7 @@ struct Messagepage: View {
             
             ScrollView(showsIndicators: false) {
                 ForEach(message.chat) { i in
-                    if i.name == self.name {
+                    if i.name == info.name {
                         ListMessage(msg: i.msg, Message: true, user: i.name, image: i.image).padding(EdgeInsets(top: 3, leading: 50, bottom: 0, trailing: 10)).onTapGesture {
                             homeData.selectedImageID = i.image
                             homeData.showImageViewer.toggle()
@@ -42,7 +42,7 @@ struct Messagepage: View {
                 
                 Button(action: {
                     if self.write.count > 0 {
-                        self.message.addInfo(msg: self.write, user: self.name, image: self.image ?? "")
+                        self.message.addInfo(msg: self.write, user: info.name, image: self.image ?? "")
                         self.write = ""
                     } else {
                         
@@ -104,7 +104,7 @@ struct Messagepage: View {
                 print((error?.localizedDescription)!)
                 return
             }
-            self.message.addInfo(msg: self.write, user: self.name, image: url!.absoluteString)
+            self.message.addInfo(msg: self.write, user: info.name, image: url!.absoluteString)
             selectedImage = nil
         }
     }

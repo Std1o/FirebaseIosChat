@@ -7,52 +7,35 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import Firebase
 
 struct ContentView: View {
     
-    @State var name : String = ""
-    @State var show = false
+    @ObservedObject var info:  AppDelegate
     var body: some View {
-        NavigationView {
-            ZStack {
-                //my Mac Air is really slow today sorry.
-                VStack {
-                    Button(action: {
-                        self.show.toggle()
-                    }) {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .frame(width: 55, height: 55)
-                    .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                    }
-                    
-                    TextField("Username..", text: self.$name).padding(10)
-                        .background(Color(red: 233.0/255, green: 234.0/255, blue: 243.0/255))
-                    .cornerRadius(20)
-                    
-                    NavigationLink(destination: Messagepage(name: self.name)){
-                        HStack {
-                            Text("Enter").padding(12)
-                                .foregroundColor(.white)
-                                .background((self.name.count > 0) ? Color.blue : Color.gray)
-                            .cornerRadius(8)
-                            
-                        }
-                    }//NvtLink
-                }/*VStack*/.background(Color.white)
-                .cornerRadius(20)
-                    //.shadow(color: .gray, radius: 5, x: 1, y:1)
-                .padding()
-            }//ZStack
-        }//NavigationView
+        if !info.name.isEmpty {
+            Messagepage(info: info)
+        } else {
+            Button(action: {
+                GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.first?.rootViewController
+                
+                GIDSignIn.sharedInstance()?.signIn()
+            }, label: {
+                Text("Sign In")
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 45)
+                    .background(Color.red)
+                    .clipShape(Capsule())
+            }).onAppear() {
+                let firebaseAuth = Auth.auth()
+                let user = firebaseAuth.currentUser
+                if user != nil {
+                    info.name = (user?.displayName)!
+                }
+            }
+        }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-// i will share the whole code in my github account.
-//so i hope you like and dont forget to subscribe and give a like thank you for watching!!!!!

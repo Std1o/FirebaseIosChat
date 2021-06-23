@@ -154,6 +154,7 @@
 				98A64375268253E700F88A38 /* Frameworks */,
 				98A64376268253E700F88A38 /* Resources */,
 				7C5A43F118844F14E7CE4F45 /* [CP] Embed Pods Frameworks */,
+				05610A24E4C8D4332E22492B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +211,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05610A24E4C8D4332E22492B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		308DCCD7DA65DCC1FD264D5B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
