@@ -25,20 +25,20 @@ struct ListMessage : View {
                 
                 VStack {
                 Text(msg).padding(10).background(Color.secondary)
-                .cornerRadius(18)
+                .cornerRadius(15)
                     .foregroundColor(.white)
                     if !image.isEmpty {
-                        ImageView(withURL: image).frame(width: 70, height: 70).font(.title).background(Color(#colorLiteral(red: 0.936714828, green: 0.9688346982, blue: 1, alpha: 1))).cornerRadius(5)
+                        ImageView(withURL: image).cornerRadius(15)
                     }
                 }
             } else {
                 VStack {
                     
                     Text(msg).padding(10).background(Color.blue)
-                    .cornerRadius(28)
+                    .cornerRadius(15)
                         .foregroundColor(.white)
                     if !image.isEmpty {
-                        ImageView(withURL: image).frame(width: 70, height: 70).font(.title).background(Color(#colorLiteral(red: 0.936714828, green: 0.9688346982, blue: 1, alpha: 1))).cornerRadius(5)
+                        ImageView(withURL: image).cornerRadius(15)
                     }
                     
                 }
@@ -62,7 +62,7 @@ struct ImageView: View {
         Image(uiImage: image)
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width:100, height:100)
+            .frame(width:200, height:200)
             .onReceive(imageLoader.didChange) { data in
                 self.image = UIImage(data: data) ?? UIImage()
             }
