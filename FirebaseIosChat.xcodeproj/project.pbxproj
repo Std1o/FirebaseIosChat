@@ -77,6 +77,14 @@
 			path = ImageViewer;
 			sourceTree = "<group>";
 		};
+		98318CBF26838C70008A1B00 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				98A643A72682588400F88A38 /* IDData.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		98A6436F268253E700F88A38 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +106,12 @@
 		98A6437A268253E800F88A38 /* FirebaseIosChat */ = {
 			isa = PBXGroup;
 			children = (
+				9840214226828020009F911E /* ListMessage.swift */,
 				98318CBC268389A4008A1B00 /* ProgressDialog.swift */,
+				98318CBF26838C70008A1B00 /* models */,
 				980894E126838271000A8CA4 /* ImageViewer */,
 				9840214526833152009F911E /* ImageLoader.swift */,
 				9840214626833152009F911E /* ImagePicker.swift */,
-				9840214226828020009F911E /* ListMessage.swift */,
-				98A643A72682588400F88A38 /* IDData.swift */,
 				98A643A42682587600F88A38 /* DataFire.swift */,
 				98A6439E2682583C00F88A38 /* MessagePage.swift */,
 				98A6439B2682580B00F88A38 /* ImagePicker.swift */,
