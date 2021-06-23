@@ -37,10 +37,12 @@ struct ListMessage : View {
                 }
             } else {
                 HStack {
-                    Image(uiImage: UIImage(data: self.image)!).resizable()
-                        .frame(width: 45, height: 45)
-                    .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                    if UIImage(data: self.image) != nil {
+                        Image(uiImage: UIImage(data: self.image)!).resizable()
+                            .frame(width: 45, height: 45)
+                        .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                    }
                     
                     Text(msg).padding(10).background(Color.blue)
                     .cornerRadius(28)

@@ -18,19 +18,21 @@ struct Messagepage: View {
     @State var write = ""
     var body: some View {
         VStack {
-            List(message.chat) { i in
-                if i.name == self.name {
-                    ListMessage(msg: i.msg, Message: true, user: i.name, image: i.$image)
-                } else {
-                    ListMessage(msg: i.msg, Message: false, user: i.name, image: i.$image)
+            
+            ScrollView(showsIndicators: false) {
+                ForEach(message.chat) { i in
+                    if i.name == self.name {
+                        ListMessage(msg: i.msg, Message: true, user: i.name, image: i.$image).padding(EdgeInsets(top: 3, leading: 50, bottom: 0, trailing: 10))
+                    } else {
+                        ListMessage(msg: i.msg, Message: false, user: i.name, image: i.$image).padding(EdgeInsets(top: 3, leading: 10, bottom: 10, trailing: 50))
+                    }
                 }
-                
             }.navigationBarTitle("Chats", displayMode: .inline)
             
             HStack {
                 TextField("message...",text: self.$write).padding(10)
                     .background(Color(red: 233.0/255, green: 234.0/255, blue: 243.0/255))
-                .cornerRadius(25)
+                    .cornerRadius(25)
                 
                 Button(action: {
                     if self.write.count > 0 {
