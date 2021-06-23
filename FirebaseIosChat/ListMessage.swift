@@ -15,42 +15,56 @@ struct ListMessage : View {
     
     var Message = false
     var user = ""
-    
-    @Binding var image : Data
+    var imageFormats = ["JPG", "PNG", "JPEG", "HEIC"]
+    var image : String
     var body: some View {
          
         HStack {
             if Message {
                 Spacer()
                 
-                HStack {
+                VStack {
                 Text(msg).padding(10).background(Color.secondary)
                 .cornerRadius(18)
                     .foregroundColor(.white)
-                    
-                    if UIImage(data: self.image) != nil {
-                        Image(uiImage: UIImage(data: self.image)!).resizable()
-                            .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
+                    if !image.isEmpty {
+                        ImageView(withURL: image).frame(width: 70, height: 70).font(.title).background(Color(#colorLiteral(red: 0.936714828, green: 0.9688346982, blue: 1, alpha: 1))).cornerRadius(5)
                     }
                 }
             } else {
-                HStack {
-                    if UIImage(data: self.image) != nil {
-                        Image(uiImage: UIImage(data: self.image)!).resizable()
-                            .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-                    }
+                VStack {
                     
                     Text(msg).padding(10).background(Color.blue)
                     .cornerRadius(28)
                         .foregroundColor(.white)
+                    if !image.isEmpty {
+                        ImageView(withURL: image).frame(width: 70, height: 70).font(.title).background(Color(#colorLiteral(red: 0.936714828, green: 0.9688346982, blue: 1, alpha: 1))).cornerRadius(5)
+                    }
                     
                 }
                 Spacer()
             }
         }
+    }
+}
+
+
+struct ImageView: View {
+    @ObservedObject var imageLoader:ImageLoader
+    @State var image:UIImage = UIImage()
+    
+    init(withURL url:String) {
+        imageLoader = ImageLoader(urlString:url)
+    }
+    
+    var body: some View {
+        
+        Image(uiImage: image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width:100, height:100)
+            .onReceive(imageLoader.didChange) { data in
+                self.image = UIImage(data: data) ?? UIImage()
+            }
     }
 }

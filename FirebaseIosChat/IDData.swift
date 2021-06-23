@@ -14,5 +14,5 @@ struct iDData : Identifiable {
     var name : String
     var msg : String
     var time: String
-    @State var image : Data
+    var image : String
 }

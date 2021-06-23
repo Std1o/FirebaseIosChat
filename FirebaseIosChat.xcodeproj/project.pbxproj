@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9840214326828020009F911E /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214226828020009F911E /* ListMessage.swift */; };
+		9840214726833152009F911E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214526833152009F911E /* ImageLoader.swift */; };
+		9840214826833152009F911E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9840214626833152009F911E /* ImagePicker.swift */; };
 		98A6437C268253E800F88A38 /* FirebaseIosChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */; };
 		98A6437E268253E800F88A38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A6437D268253E800F88A38 /* ContentView.swift */; };
 		98A64380268253E900F88A38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A6437F268253E900F88A38 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		20FFC01EAB966B2057BF7D98 /* Pods-FirebaseIosChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIosChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseIosChat/Pods-FirebaseIosChat.release.xcconfig"; sourceTree = "<group>"; };
 		2F303A228AAEA4B3FB45623C /* Pods_FirebaseIosChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseIosChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9840214226828020009F911E /* ListMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
+		9840214526833152009F911E /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		9840214626833152009F911E /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		98A64378268253E800F88A38 /* FirebaseIosChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseIosChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A6437B268253E800F88A38 /* FirebaseIosChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseIosChatApp.swift; sourceTree = "<group>"; };
 		98A6437D268253E800F88A38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		98A6437A268253E800F88A38 /* FirebaseIosChat */ = {
 			isa = PBXGroup;
 			children = (
+				9840214526833152009F911E /* ImageLoader.swift */,
+				9840214626833152009F911E /* ImagePicker.swift */,
 				9840214226828020009F911E /* ListMessage.swift */,
 				98A643A72682588400F88A38 /* IDData.swift */,
 				98A643A42682587600F88A38 /* DataFire.swift */,
@@ -228,9 +234,11 @@
 				98A6439C2682580B00F88A38 /* ImagePicker.swift in Sources */,
 				98A6437E268253E800F88A38 /* ContentView.swift in Sources */,
 				98A6439F2682583C00F88A38 /* MessagePage.swift in Sources */,
+				9840214826833152009F911E /* ImagePicker.swift in Sources */,
 				98A643A52682587600F88A38 /* DataFire.swift in Sources */,
 				98A6437C268253E800F88A38 /* FirebaseIosChatApp.swift in Sources */,
 				98A643A82682588400F88A38 /* IDData.swift in Sources */,
+				9840214726833152009F911E /* ImageLoader.swift in Sources */,
 				9840214326828020009F911E /* ListMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
