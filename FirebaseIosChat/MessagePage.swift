@@ -10,6 +10,7 @@ struct Messagepage: View {
     @State var selectedImage: UIImage?
     @State var attachedFiles = [String]()
     let storage = Storage.storage().reference()
+    @StateObject var homeData = HomeViewModel()
     
     @State var write = ""
     var body: some View {
@@ -18,9 +19,15 @@ struct Messagepage: View {
             ScrollView(showsIndicators: false) {
                 ForEach(message.chat) { i in
                     if i.name == self.name {
-                        ListMessage(msg: i.msg, Message: true, user: i.name, image: i.image).padding(EdgeInsets(top: 3, leading: 50, bottom: 0, trailing: 10))
+                        ListMessage(msg: i.msg, Message: true, user: i.name, image: i.image).padding(EdgeInsets(top: 3, leading: 50, bottom: 0, trailing: 10)).onTapGesture {
+                            homeData.selectedImageID = i.image
+                            homeData.showImageViewer.toggle()
+                        }
                     } else {
-                        ListMessage(msg: i.msg, Message: false, user: i.name, image: i.image).padding(EdgeInsets(top: 3, leading: 10, bottom: 10, trailing: 50))
+                        ListMessage(msg: i.msg, Message: false, user: i.name, image: i.image).padding(EdgeInsets(top: 3, leading: 10, bottom: 10, trailing: 50)).onTapGesture {
+                            homeData.selectedImageID = i.image
+                            homeData.showImageViewer.toggle()
+                        }
                     }
                 }
             }.navigationBarTitle("Chats", displayMode: .inline)
@@ -47,7 +54,13 @@ struct Messagepage: View {
                     
                 }
             }.padding()
-        }.onChange(of: selectedImage, perform: { value in
+        }.overlay(
+            
+            // Image Viewer....
+            FullImageView()
+        )
+        //setting envoronment Object...
+        .environmentObject(homeData).onChange(of: selectedImage, perform: { value in
             if selectedImage != nil {
                 uploadImageToFireBase(image: selectedImage!)
             }
