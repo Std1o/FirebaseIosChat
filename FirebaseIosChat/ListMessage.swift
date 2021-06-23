@@ -18,25 +18,27 @@ struct ListMessage : View {
     var imageFormats = ["JPG", "PNG", "JPEG", "HEIC"]
     var image : String
     var body: some View {
-         
+        
         HStack {
             if Message {
                 Spacer()
                 
                 VStack {
-                Text(msg).padding(10).background(Color.secondary)
-                .cornerRadius(15)
-                    .foregroundColor(.white)
+                    if !msg.isEmpty {
+                        Text(msg).padding(10).background(Color.secondary)
+                            .cornerRadius(15).foregroundColor(.white)
+                    }
                     if !image.isEmpty {
                         ImageView(withURL: image).cornerRadius(15)
                     }
                 }
             } else {
                 VStack {
-                    
-                    Text(msg).padding(10).background(Color.blue)
-                    .cornerRadius(15)
-                        .foregroundColor(.white)
+                    if !msg.isEmpty {
+                        Text(msg).padding(10).background(Color.blue)
+                            .cornerRadius(15)
+                            .foregroundColor(.white)
+                    }
                     if !image.isEmpty {
                         ImageView(withURL: image).cornerRadius(15)
                     }
