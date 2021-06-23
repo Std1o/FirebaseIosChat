@@ -13,5 +13,6 @@ struct iDData : Identifiable {
     var id: String
     var name : String
     var msg : String
+    var time: String
     @State var image : Data
 }
