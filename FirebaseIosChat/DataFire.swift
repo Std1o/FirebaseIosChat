@@ -6,48 +6,32 @@
 //  Copyright © 2020 App-Designer2 . All rights reserved.
 //
 
-import Firebase
+import FirebaseDatabase
 import Combine
-
+import CodableFirebase
 
 class DataFire : ObservableObject {
     @Published var chat = [iDData]()
+    var ref = Database.database().reference()
     
     init() {
         
-        let db = Firestore.firestore()
-        
-        db.collection("chat").addSnapshotListener { (snap, err) in
-            if err != nil {
-                print((err?.localizedDescription)!)
-                return
-            }
-            for i in snap!.documentChanges {
-                if i.type == .added {
-                    
-                    guard let name = i.document.get("name") as? String else { return }
-                    guard let msg = i.document.get("msg") as? String else { return }
-                    guard let time = i.document.get("time") as? String else { return }
-                    guard let image = i.document.get("image") as? String else { return }
-                    let id = i.document.documentID
-                    
-                    self.chat.append(iDData(id: id,name: name, msg: msg, time: time, image: image))
-                    print(msg)
+        _ = ref.child("chat").observe(.childAdded) { (snapshot) in
+                    guard let value = snapshot.value else { return }
+                    do {
+                        let item = try FirebaseDecoder().decode(iDData.self, from: value)
+                        self.chat.append(item)
+                    } catch let error {
+                        print(error)
+                    }
                 }
-            }
-        }
     }
+    
     func addInfo(msg: String, user: String, image: String) {
-        let db = Firestore.firestore()
-        
-        db.collection("chat").addDocument(data: ["msg": msg, "name": user, "image": image, "time": getTime()]) { (err) in
-            
-            if err != nil {
-                print((err?.localizedDescription)!)
-                return
-            }
-            print("Success")
-        }
+        let time = getTime()
+        let messageModel = iDData(id: NSUUID().uuidString, name: user, msg: msg, time: time, image: image)
+        ref.child("chat").child(time.replacingOccurrences(of: ".", with: "")).setValue(try! FirebaseEncoder().encode(messageModel))
+        print("Success")
     }
     
     func getTime() -> String {
