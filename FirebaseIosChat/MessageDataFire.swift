@@ -10,8 +10,8 @@ import FirebaseDatabase
 import Combine
 import CodableFirebase
 
-class DataFire : ObservableObject {
-    @Published var chat = [iDData]()
+class MessageDataFire : ObservableObject {
+    @Published var chat = [Message]()
     var ref = Database.database().reference()
     
     init() {
@@ -19,7 +19,7 @@ class DataFire : ObservableObject {
         _ = ref.child("chat").observe(.childAdded) { (snapshot) in
                     guard let value = snapshot.value else { return }
                     do {
-                        let item = try FirebaseDecoder().decode(iDData.self, from: value)
+                        let item = try FirebaseDecoder().decode(Message.self, from: value)
                         self.chat.append(item)
                     } catch let error {
                         print(error)
@@ -29,7 +29,7 @@ class DataFire : ObservableObject {
     
     func addInfo(msg: String, user: String, image: String) {
         let time = getTime()
-        let messageModel = iDData(id: NSUUID().uuidString, name: user, msg: msg, time: time, image: image)
+        let messageModel = Message(id: NSUUID().uuidString, name: user, msg: msg, time: time, image: image)
         ref.child("chat").child(time.replacingOccurrences(of: ".", with: "")).setValue(try! FirebaseEncoder().encode(messageModel))
         print("Success")
     }

@@ -3,7 +3,7 @@ import Combine
 import FirebaseStorage
 
 struct Messagepage: View {
-    @ObservedObject var message = DataFire()
+    @ObservedObject var message = MessageDataFire()
     var image : String?
     @State var shown = false
     @State var selectedImage: UIImage?

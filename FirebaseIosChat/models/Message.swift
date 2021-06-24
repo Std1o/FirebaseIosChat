@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-struct iDData : Codable, Identifiable {
+struct Message : Codable, Identifiable {
     internal init(id: String, name: String, msg: String, time: String, image: String) {
         self.id = id
         self.name = name
