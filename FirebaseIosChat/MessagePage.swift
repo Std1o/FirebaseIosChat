@@ -37,8 +37,6 @@ struct Messagepage: View {
                     shown.toggle()
                 }
                 TextField("message...",text: self.$write).padding(10)
-                    .background(Color(red: 233.0/255, green: 234.0/255, blue: 243.0/255))
-                    .cornerRadius(25)
                 
                 Button(action: {
                     if self.write.count > 0 {
@@ -53,7 +51,8 @@ struct Messagepage: View {
                         .rotationEffect(.degrees(50))
                     
                 }
-            }.padding()
+            }.padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 0.3)).padding()
             
         }.overlay(
             ZStack{
